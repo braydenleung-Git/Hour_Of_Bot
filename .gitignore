@@ -1,2 +1,3 @@
 .DS_Store
 /src/config_s.h
+/Build_Output/*
