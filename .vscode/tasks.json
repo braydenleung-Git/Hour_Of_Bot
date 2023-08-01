@@ -34,10 +34,6 @@
                 "-e",
                 "'tell application \"Terminal\" to close (every window whose frontmost is true)'"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "presentation": {
                 "echo": false,
                 "reveal": "never",
@@ -46,9 +42,20 @@
             }
         },
         {
+            "type": "shell",
+            "label": "Change Directory",
+            "command": "cd",
+            "args": [
+                "../Build_Output",
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+        },
+        {
         "label": "Build",
         "dependsOn": [
-            //"kill previous terminal window",
+            "Change Directory",
             "Build DPP file",
         ]
     }
