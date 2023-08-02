@@ -17,9 +17,7 @@ int main() {
             event.reply("Turning off Bot now");
         }
         std::cout<<"robot has been turned off"<<endl;
-        bot.shutdown();
-        std::cout<<"the program has exited"<<endl;
-        return 0;
+        dpp::st_return;
     });
 
     bot.on_ready([&bot](const dpp::ready_t & event) {

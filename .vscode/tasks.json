@@ -24,7 +24,7 @@
                 "kind": "build",
                 "isDefault": true,
             },
-            "isBackground": true,
+            "isBackground": false,
         },
         {
             "type": "shell",
@@ -55,7 +55,7 @@
         {
         "label": "Build",
         "dependsOn": [
-            "Change Directory",
+            //"Change Directory",
             "Build DPP file",
         ]
     }
