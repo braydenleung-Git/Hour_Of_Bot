@@ -12,11 +12,11 @@
                 "-fansi-escape-codes",
                 "${file}",
                 "-o",
-                "../Build_Output/${fileBasenameNoExtension}",
+                "${workspaceFolder}/Build_Output/${fileBasenameNoExtension}",
             ],
             "options": {
-                "cwd": "${fileDirname}",
-                "linux" : {
+                "cwd": "${fileDirname}"
+                /*"linux" : {
                     "command": "usr/bin/g++",
                     "args": [
                         "-std=c++17",
@@ -28,7 +28,7 @@
                         "-o", 
                         "../Build_Output/${fileBasenameNoExtension}"
                     ],
-                },
+                },*/
             },
             "problemMatcher": [
                 "$gcc"

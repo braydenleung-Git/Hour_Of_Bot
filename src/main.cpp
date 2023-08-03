@@ -1,6 +1,7 @@
 #include "config_s.h"
 #include <dpp/dpp.h>
 const std::string    BOT_TOKEN    = token;
+bool running_state;
 int main() {
     dpp::cluster bot(BOT_TOKEN); 
 
@@ -17,7 +18,7 @@ int main() {
             event.reply("Turning off Bot now");
         }
         std::cout<<"robot has been turned off"<<endl;
-        return 0;
+        running_state = false;
     });
 
     bot.on_ready([&bot](const dpp::ready_t & event) {
@@ -32,6 +33,13 @@ int main() {
 
         }
     });
-    bot.start(dpp::st_wait);
-
+    running_state = true; 
+    bot.start(dpp::st_return);
+    /*this is used to hold the bot in the "online" state, setting 
+    running_state to false would state the bot is false, therefore ending the program/returning the value 0
+    */
+    while(running_state){
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
+    return 0;
 }
