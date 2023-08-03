@@ -4,7 +4,7 @@
         {
             "type": "cppbuild",
             "label": "Build DPP file",
-            "command": "/usr/bin/clang++",
+            "command":"/usr/bin/clang++",
             "args": [
                 "-std=c++17",
                 "-ldpp",
@@ -12,10 +12,23 @@
                 "-fansi-escape-codes",
                 "${file}",
                 "-o",
-                "${fileBasenameNoExtension}",
+                "../Build_Output/${fileBasenameNoExtension}",
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}",
+                "linux" : {
+                    "command": "usr/bin/g++",
+                    "args": [
+                        "-std=c++17",
+                        "-ldpp",
+                        "-fdiagnostics-color=always",
+                        "-fansi-escape-codes",
+                        "-g", 
+                        "${file}", 
+                        "-o", 
+                        "../Build_Output/${fileBasenameNoExtension}"
+                    ],
+                },
             },
             "problemMatcher": [
                 "$gcc"
@@ -42,22 +55,11 @@
             }
         },
         {
-            "type": "shell",
-            "label": "Change Directory",
-            "command": "cd",
-            "args": [
-                "../Build_Output",
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-        },
-        {
         "label": "Build",
         "dependsOn": [
-            //"Change Directory",
             "Build DPP file",
         ]
     }
     ],
+
 }
