@@ -12,7 +12,7 @@
                 "-fansi-escape-codes",
                 "${file}",
                 "-o",
-                "${workspaceFolder}/Build_Output/${fileBasenameNoExtension}",
+                "${workspaceFolder}/Build_Output/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -26,7 +26,7 @@
                         "-g", 
                         "${file}", 
                         "-o", 
-                        "../Build_Output/${fileBasenameNoExtension}"
+                        ""${workspaceFolder}/Build_Output/${fileBasenameNoExtension}"
                     ],
                 },*/
             },
