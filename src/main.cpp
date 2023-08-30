@@ -26,7 +26,7 @@ int main() {
         std:: cout <<" Hour Of Bot project has been turned on"<<endl;
         if (dpp::run_once<struct register_bot_commands>()) {
             dpp::slashcommand ping("ping","I wonder what this do?", bot.me.id);
-            dpp::slashcommand stop ("stop", "turns the robot down", bot.me.id);
+            dpp::slashcommand stop ("stop", "turns the robot do wn", bot.me.id);
             stop.set_dm_permission(true);
             stop.set_default_permissions(0);
             bot.global_command_create(ping);
@@ -42,6 +42,7 @@ int main() {
     while(running_state){
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
+    bot.~cluster();
     return 0;
 }
 /*
