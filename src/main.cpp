@@ -28,7 +28,7 @@ int main() {
         if(event.command.get_command_name()== "uptime"){
             event.reply(uptime.to_string());
         }
-    })}
+    });
 
     bot.on_ready([&bot](const dpp::ready_t & event) {
         std:: cout <<" Hour Of Bot project has been turned on"<<endl;
