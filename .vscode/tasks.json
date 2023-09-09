@@ -7,28 +7,18 @@
             "command":"/usr/bin/clang++",
             "args": [
                 "-std=c++17",
+                "-pthread",
+                "-lpthread",
                 "-ldpp",
+                //"-v",
                 "-fdiagnostics-color=always",
                 "-fansi-escape-codes",
                 "${file}",
                 "-o",
-                "${workspaceFolder}/Build_Output/${fileBasenameNoExtension}",
+                "${workspaceFolder}/Build_Output/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
-                /*"linux" : {
-                    "command": "usr/bin/g++",
-                    "args": [
-                        "-std=c++17",
-                        "-ldpp",
-                        "-fdiagnostics-color=always",
-                        "-fansi-escape-codes",
-                        "-g", 
-                        "${file}", 
-                        "-o", 
-                        "../Build_Output/${fileBasenameNoExtension}"
-                    ],
-                },*/
             },
             "problemMatcher": [
                 "$gcc"

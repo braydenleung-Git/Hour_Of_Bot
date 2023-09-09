@@ -4,7 +4,7 @@ const std::string    BOT_TOKEN    = token;
 bool running_state;
 int main() {
     dpp::cluster bot(BOT_TOKEN); 
-    dpp::log_t writeLogToFile();
+    //dpp::log_t writeLogToFile();
     bot.on_log(dpp::utility::cout_logger());
     //bot.on_log(writeLogToFile());
     dpp::utility::uptime uptime;
@@ -54,12 +54,12 @@ int main() {
     while(running_state){
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
+    bot.~cluster();
     return 0;
 }
 /*
 This is an attempt to redirect or mirro cout to a .log file, more research needed
 */
-/*
 dpp::log_t writeLogToFile(){
     time_t now = time(0);
     string now_string = ctime(&now);
@@ -79,8 +79,9 @@ dpp::log_t writeLogToFile(){
     // Redirect cout to file
     cout.rdbuf(stream_buffer_file);
 
-    /* Redirect cout back to screen removed from the code because dpp handlled it ?
+    Redirect cout back to screen removed from the code because dpp handlled it ?
     cout.rdbuf(stream_buffer_cout);
-    */
+    
     //file.close();
 }
+*/
