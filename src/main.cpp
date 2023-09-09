@@ -60,6 +60,7 @@ int main() {
 /*
 This is an attempt to redirect or mirro cout to a .log file, more research needed
 */
+/*
 dpp::log_t writeLogToFile(){
     time_t now = time(0);
     string now_string = ctime(&now);
