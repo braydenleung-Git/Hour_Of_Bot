@@ -24,7 +24,7 @@ int main() {
         running_state = false;
     });
 
-    bot.on_slashcommand([&bot uptime](const dpp::slashcommand_t& event){
+    bot.on_slashcommand([&uptime](const dpp::slashcommand_t& event){
         if(event.command.get_command_name()== "uptime"){
             event.reply(uptime.to_string());
         }
