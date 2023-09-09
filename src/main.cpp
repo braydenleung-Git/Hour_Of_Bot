@@ -7,6 +7,8 @@ int main() {
     dpp::log_t writeLogToFile();
     bot.on_log(dpp::utility::cout_logger());
     //bot.on_log(writeLogToFile());
+    dpp::utility::uptime uptime;
+
 
     bot.on_slashcommand([](const dpp::slashcommand_t& event) {
         if (event.command.get_command_name() == "ping") {
@@ -22,15 +24,25 @@ int main() {
         running_state = false;
     });
 
+    bot.on_slashcommand([&bot uptime](const dpp::slashcommand_t& event){
+        if(event.command.get_command_name()== "uptime"){
+            event.reply(uptime.to_string());
+        }
+    })}
+
     bot.on_ready([&bot](const dpp::ready_t & event) {
         std:: cout <<" Hour Of Bot project has been turned on"<<endl;
         if (dpp::run_once<struct register_bot_commands>()) {
             dpp::slashcommand ping("ping","I wonder what this do?", bot.me.id);
             dpp::slashcommand stop ("stop", "turns the robot down", bot.me.id);
+            dpp::slashcommand uptime_m("uptime", "calls the bot's uptime", bot.me.id);
             stop.set_dm_permission(true);
-            stop.set_default_permissions(0);
+            stop.s_met_default_permissions(0);
+            uptime_m.set_dm_permission(true);
+            uptime_m.set_default_permissions(0);
             bot.global_command_create(ping);
             bot.global_command_create(stop);
+            bot.global_command_create(this.uptime);
 
         }
     });
@@ -47,6 +59,7 @@ int main() {
 /*
 This is an attempt to redirect or mirro cout to a .log file, more research needed
 */
+/*
 dpp::log_t writeLogToFile(){
     time_t now = time(0);
     string now_string = ctime(&now);
