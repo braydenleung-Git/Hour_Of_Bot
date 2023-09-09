@@ -20,7 +20,7 @@ int main() {
         if (event.command.get_command_name() == "stop") {
             event.reply("Turning off Bot now");
         }
-        std::cout<<"robot has been turned off"<<endl;
+        std::cout<<"Robot has been turned off"<<endl;
         running_state = false;
     });
 
@@ -46,6 +46,7 @@ int main() {
 
         }
     });
+    
     running_state = true; 
     bot.start(dpp::st_return);
     /*this is used to hold the bot in the "online" state, setting 
@@ -58,7 +59,7 @@ int main() {
     return 0;
 }
 /*
-This is an attempt to redirect or mirro cout to a .log file, more research needed
+This is an attempt to redirect or mirror cout to a .log file, more research needed
 */
 /*
 dpp::log_t writeLogToFile(){
