@@ -42,7 +42,7 @@ int main() {
             uptime_m.set_default_permissions(0);
             bot.global_command_create(ping);
             bot.global_command_create(stop);
-            bot.global_command_create(this.uptime);
+            bot.global_command_create(uptime_m);
 
         }
     });
