@@ -12,24 +12,24 @@ int main() {
 
     bot.on_slashcommand([](const dpp::slashcommand_t& event) {
         if (event.command.get_command_name() == "ping") {
-            std::cout<<"Executed Ping Command"<<endl;
             event.reply("Pong! Why did you typed this");
+            std::cout<<"Executed Ping Command"<<endl;
         }
     });
     
     bot.on_slashcommand([&bot](const dpp::slashcommand_t& event) {
         if (event.command.get_command_name() == "stop") {
-            std::cout<<"Executed Stop Command"<<endl;
             std::cout<<"Robot has been turned off"<<endl;
-            event.reply("Turning off Bot now");
+            event.reply("Shutting Down. . .");
             running_state = false;
+            std::cout<<"Executed Stop Command"<<endl;
         }
     });
 
     bot.on_slashcommand([&uptime](const dpp::slashcommand_t& event){
         if(event.command.get_command_name()== "uptime"){
-            std::cout<<"Executed Uptime Command"<<endl;
             event.reply(uptime.to_string());
+            std::cout<<"Executed Uptime Command"<<endl;
         }
     });
 
