@@ -37,7 +37,7 @@ int main() {
             dpp::slashcommand stop ("stop", "turns the robot down", bot.me.id);
             dpp::slashcommand uptime_m("uptime", "calls the bot's uptime", bot.me.id);
             stop.set_dm_permission(true);
-            stop.s_met_default_permissions(0);
+            stop.set_default_permissions(0);
             uptime_m.set_dm_permission(true);
             uptime_m.set_default_permissions(0);
             bot.global_command_create(ping);
