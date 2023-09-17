@@ -19,7 +19,9 @@ int main() {
     
     bot.on_slashcommand([&bot](const dpp::slashcommand_t& event) {
         if (event.command.get_command_name() == "stop") {
-            std::cout<<"Robot has been turned off"<<endl;
+            bot.direct_message_create(403048067521183746,dpp::message("Robot has been turned off"),dpp::utility::log_error());
+            std::cout<<"Attempted Contact Admin about Shutdown"<<endl;
+            //std::cout<<"Robot has been turned off"<<endl;
             event.reply("Shutting Down. . .");
             running_state = false;
             std::cout<<"Executed Stop Command"<<endl;
