@@ -7,8 +7,8 @@
             "command":"/usr/bin/clang++",
             "args": [
                 "-std=c++17",
-                "-pthread",
                 "-lpthread",
+                "-pthread",
                 "-ldpp",
                 //"-v",
                 "-fdiagnostics-color=always",
