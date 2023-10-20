@@ -10,7 +10,6 @@
                 "-lpthread",
                 "-pthread",
                 "-ldpp",
-                //"-v",
                 "-fdiagnostics-color=always",
                 "-fansi-escape-codes",
                 "${file}",
@@ -28,21 +27,6 @@
                 "isDefault": true,
             },
             "isBackground": false,
-        },
-        {
-            "type": "shell",
-            "label": "kill previous terminal window",
-            "command": "osascript",
-            "args": [
-                "-e",
-                "'tell application \"Terminal\" to close (every window whose frontmost is true)'"
-            ],
-            "presentation": {
-                "echo": false,
-                "reveal": "never",
-                "focus": false,
-                "panel": "shared"
-            }
         },
         {
         "label": "Build",
