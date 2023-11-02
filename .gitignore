@@ -2,3 +2,4 @@
 /src/config_s.h
 /Build_Output/*
 /build
+lib_link.h
