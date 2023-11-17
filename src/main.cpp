@@ -4,9 +4,9 @@ const std::string    BOT_TOKEN    = token;
 bool running_state;
 int main() {
     dpp::cluster bot(BOT_TOKEN); 
-    //dpp::log_t writeLogToFile();
+
     bot.on_log(dpp::utility::cout_logger());
-    //bot.on_log(writeLogToFile());
+
     dpp::utility::uptime uptime;
 
 
@@ -65,30 +65,4 @@ int main() {
 }
 /*
 This is an attempt to redirect or mirror cout to a .log file, more research needed
-*/
-/*
-dpp::log_t writeLogToFile(){
-    time_t now = time(0);
-    string now_string = ctime(&now);
-    string path = "../logs/"+ now_string +".log";
-    ofstream newfile(path);
-    fstream file;
-    file.open("cout.txt", ios::out);
-    string line;
-
-    // Backup streambuffers of  cout
-    streambuf* stream_buffer_cout = cout.rdbuf();
-    streambuf* stream_buffer_cin = cin.rdbuf();
-
-    // Get the streambuffer of the file
-    streambuf* stream_buffer_file = file.rdbuf();
-
-    // Redirect cout to file
-    cout.rdbuf(stream_buffer_file);
-
-    Redirect cout back to screen removed from the code because dpp handlled it ?
-    cout.rdbuf(stream_buffer_cout);
-    
-    //file.close();
-}
 */
