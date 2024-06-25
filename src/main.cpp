@@ -2,6 +2,12 @@
 #include "include.h"
 const std::string    BOT_TOKEN    = token;
 bool running_state;
+
+/*
+    Todo list:
+        
+
+*/
 int main() {
     dpp::cluster bot(BOT_TOKEN); 
 
@@ -63,6 +69,3 @@ int main() {
     bot.~cluster();
     return 0;
 }
-/*
-This is an attempt to redirect or mirror cout to a .log file, more research needed
-*/
