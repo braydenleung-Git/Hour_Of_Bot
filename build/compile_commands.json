@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/brayden/Desktop/Hour_Of_Bot/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/usr/local/include -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/discord-bot.dir/src/main.cpp.o -c /Users/brayden/Desktop/Hour_Of_Bot/src/main.cpp",
-  "file": "/Users/brayden/Desktop/Hour_Of_Bot/src/main.cpp",
-  "output": "CMakeFiles/discord-bot.dir/src/main.cpp.o"
-}
-]
