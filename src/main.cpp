@@ -30,7 +30,7 @@ int main() {
 
     bot.on_slashcommand([&uptime](const dpp::slashcommand_t& event){
         if(event.command.get_command_name()== "uptime"){
-            event.reply(uptime.to_string());
+            event.reply(fmt::format("Uptime: {}",uptime.to_string()));
             std::cout<<"Executed Uptime Command"<<endl;
         }
     });

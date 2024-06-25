@@ -1,28 +1,35 @@
 # minimum CMake version required
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.22)
 # Project name, version and description
 project(discord-bot VERSION 1.0 DESCRIPTION "A discord bot")
  
-# Add DPP as dependency
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-# You can also add any other libs you want to use
- 
+# Set the include directory
+include_directories(/usr/local/include)
+
+# Set the library directory
+link_directories(/usr/local/lib)
+
 # Create an executable
 add_executable(${PROJECT_NAME}
     src/main.cpp
     # your other files...
 )
  
-# Linking libraries
-target_link_libraries(${PROJECT_NAME}
-    dpp
-    # Add any other libs you want to use here
-)
+# Find our pre-installed DPP package (using FindDPP.cmake).
+find_package(DPP REQUIRED)
+find_package(Spdlog REQUIRED)
  
-# Specify includes
+# Link the pre-installed DPP package.
+target_link_libraries(${PROJECT_NAME} 
+    ${DPP_LIBRARIES}
+    ${SPDLOG_LIBRARIES}
+)
+# Include the DPP directories.
 target_include_directories(${PROJECT_NAME} PRIVATE
-    libs/DPP/include
-    # Remember to add the include directories of any other libraries too
+    ${DPP_INCLUDE_DIR}
+    ${SPDLOG_INCLUDE_DIR}
 )
  
 # Set C++ version
