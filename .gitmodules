@@ -1,9 +1,0 @@
-[submodule "libs/DPP"]
-	path = libs/DPP
-	url = https://github.com/brainboxdotcc/DPP.git
-[submodule "libs/vcpkg"]
-	path = libs/vcpkg
-	url = https://github.com/Microsoft/vcpkg.git
-[submodule "libs/spdlog"]
-	path = libs/spdlog
-	url = https://github.com/gabime/spdlog
