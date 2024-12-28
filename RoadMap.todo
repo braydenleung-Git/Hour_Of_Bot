@@ -2,7 +2,11 @@ Task to do:
     Utility.h:
         ☐ uptime
         ☐ Youtube/twitch upload pinging
+            Current issues:
+                ☐Library linking to local system seems to be not working
+                ☐ D++ executable is linking opus
         ☐ Logging
+            ☐ Each sub system will declare their own logging methods
         Moderation:
             ☐ Banning
             ☐ muting
