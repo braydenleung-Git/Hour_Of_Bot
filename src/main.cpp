@@ -1,13 +1,53 @@
-#include "config_s.h"
-#include "include.h"
-const std::string    BOT_TOKEN    = token;
-bool running_state;
+/*#include "config_s.h"
+#include "main.h"
+const std::string BOT_TOKEN = token;
+bool running_state;*/
 
 /*
     Todo list:
         
 
 */
+#define CPPHTTPLIB_OPENSSL_SUPPORT
+#include <iostream>
+#include "external/cpp-httplib/httplib.h"
+#include "config_s.h"
+
+int main() {
+    // 1. Your OAuth 2.0 access token:
+    std::string access_token = "YOUR_ACCESS_TOKEN";
+
+    // 2. Create a client pointing to Google's API endpoint.
+    //    Using port 443 for HTTPS.
+    httplib::SSLClient cli("www.googleapis.com", 443);
+
+    // 3. Set up the headers with Authorization: Bearer <token>
+    httplib::Headers headers = {
+        {"Authorization", "Bearer " + access_token},
+        {"Accept", "application/json"}
+    };
+
+    // 4. Make a GET request to the YouTube Data API endpoint.
+    //    This example requests the user's channel info (mine=true).
+    auto res = cli.Get("/youtube/v3/channels?part=snippet&mine=true", headers);
+
+    // 5. Check the response
+    if (res) {
+        if (res->status == 200) {
+            std::cout << "Request succeeded!\n";
+            std::cout << "Response body: " << res->body << "\n";
+        } else {
+            std::cerr << "Request failed. Status code: " << res->status << "\n";
+            std::cerr << "Body: " << res->body << "\n";
+        }
+    } else {
+        std::cerr << "Request error: " << httplib::to_string(res.error()) << "\n";
+    }
+
+    return 0;
+}
+
+/*
 int main() {
     dpp::cluster bot(BOT_TOKEN); 
 
@@ -59,13 +99,13 @@ int main() {
     });
     
     running_state = true; 
-    bot.start(dpp::st_return);
+    bot.start(dpp::st_return);*/
     /*this is used to hold the bot in the "online" state, setting 
     running_state to false would state the bot is false, therefore ending the program/returning the value 0
-    */
+    *//*
     while(running_state){
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
     bot.~cluster();
     return 0;
-}
+}*/

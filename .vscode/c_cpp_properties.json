@@ -3,7 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/src/include/*"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -11,6 +11,7 @@
             ],
             "cStandard": "c17",
             "cppStandard": "c++17",
+            "configurationProvider": "ms-vscode.cmake-tools"
         },
         {
             "name": "Linux",

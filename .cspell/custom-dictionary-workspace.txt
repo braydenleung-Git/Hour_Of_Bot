@@ -1,0 +1,11 @@
+# Custom Dictionary Words
+vcpkg
+spdlog
+httplib
+Spdlog
+SPDLOG
+cplusplus
+MSVC
+MSYS
+STREQUAL
+WCHAR
