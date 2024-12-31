@@ -13,9 +13,11 @@
 /*
 required methods
 (github?) initialization webpage, include step by step and link, Auth2.0 setup webpage link
-also how to handle 
+ask for path of config file(keys) for each launch {require special application perms(runs as admin?)}
 
 */
 
+
+//switching to a web hook based approach
 
 
