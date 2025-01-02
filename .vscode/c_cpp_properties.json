@@ -3,21 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/include",
-                "${workspaceFolder}/include/external"
-            ],
-            "defines": [],
-            "macFrameworkPath": [
-                "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-            ],
-            "cStandard": "c17",
-            "cppStandard": "c++17",
-            "configurationProvider": "ms-vscode.cmake-tools"
-        },
-        {
-            "name": "Linux",
-            "includePath": [
-                "${workspaceFolder}/include/**"
+                "/Users/brayden/Desktop/Hour_Of_Bot/include/**"
             ],
             "compilerPath": "/usr/bin/clang++",
             "cStandard": "c17",
@@ -25,11 +11,11 @@
             "mergeConfigurations": false,
             "browse": {
                 "path": [
-                    "/Users/brayden/Desktop/Hour_Of_Bot/**",
-                    "${workspaceFolder}"
+                    "/Users/brayden/Desktop/Hour_Of_Bot/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true
-            }
+            },
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4
